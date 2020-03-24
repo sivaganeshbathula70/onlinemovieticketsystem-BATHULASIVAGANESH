@@ -31,18 +31,18 @@ public class SeatDao implements SeatDaoInterface {
 	public Seat blockseat(int block)
 	{
 		List<Seat>seatList = seatRepo.getSeat();
-		for(Seat s:seatList)
+		for(Seat seatblock:seatList)
 		{
 			//Enum seatStatusEnum;
-			if(s.getSeatId()==block)
+			if(seatblock.getSeatId()==block)
 			{
 				//List<Seat> seatList=seatRepo.getSeat();
 				//return s;
 				
 				
 		 	//s.setSeatStatus(seatStatusEnum.valueOf("Available"));
-		 	s.setSeatStatus(seatStatusEnum.valueOf("Blocked"));
-		 	return s;
+		 	seatblock.setSeatStatus(seatStatusEnum.valueOf("Blocked"));
+		 	return seatblock;
 			}
 		}return null;
 	}
@@ -54,12 +54,12 @@ public class SeatDao implements SeatDaoInterface {
 	public Seat bookseat(int book)
 	{
 		List<Seat>seatList = seatRepo.getSeat();
-		for(Seat k:seatList)
-		if(k.getSeatId()==book)
+		for(Seat bookseat:seatList)
+		if(bookseat.getSeatId()==book)
 		{
 			//return  k;
-			k.setSeatStatus(seatStatusEnum.valueOf("Blocked"));
-return k;
+			bookseat.setSeatStatus(seatStatusEnum.valueOf("Blocked"));
+return bookseat;
 			
 		}
 		return null;
@@ -69,12 +69,12 @@ return k;
 	public Seat cancelseat(int cancel)
 	{
 		List<Seat>seatList = seatRepo.getSeat();
-		for(Seat c:seatList)
+		for(Seat cancelseat:seatList)
 		{
-			if(c.getSeatId()==cancel)
+			if(cancelseat.getSeatId()==cancel)
 			{
-				c.setSeatStatus(seatStatusEnum.valueOf("Available"));
-				return c;
+				cancelseat.setSeatStatus(seatStatusEnum.valueOf("Available"));
+				return cancelseat;
 			}
 			
 		}
@@ -124,14 +124,14 @@ return k;
 			{	
 				List<Show> showList=showRepo.getShow();
 				//<Show> sq=showList.stream().filter(s->s.getMovie().equalsIgnoreCase(sd));
-				for(Show sq:showList)
+				for(Show showsearch:showList)
 				{
 					
 					
 					
-					if(sq.getMovie().contentEquals(sear))
+					if(showsearch.getMovie().contentEquals(sear))
 					{
-						return sq;
+						return showsearch;
 						
 					}
 				}
