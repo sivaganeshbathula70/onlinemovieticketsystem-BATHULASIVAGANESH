@@ -15,7 +15,7 @@ public class Client {
 	public static void main(String args[])
 	 {
 		SeatService seatservice = new SeatService();
-		Scanner sc = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		int choice;
 		
 		System.out.println("Enter choice");
@@ -34,7 +34,7 @@ public class Client {
 		System.out.println("Enter 6 for initating Booking");
 		System.out.println("Enter 7 for Exit");
 		
-		choice = sc.nextInt();
+		choice = scanner.nextInt();
 
 
 		switch(choice)
@@ -59,7 +59,7 @@ public class Client {
 			
 			try
 			{
-				String	search = sc.next();
+				String	search = scanner.next();
 				Show showclient=seatservice.searchMovie(search);	
 				System.out.println(showclient);
 				break;
@@ -87,7 +87,7 @@ public class Client {
 				System.out.println("Enter 3 for seat Booking");
 				System.out.println("Enter 4 for seat cancel");
 				System.out.println("Enter the seats u want to block");
-				int newOption = sc.nextInt();
+				int newOption = scanner.nextInt();
 				switch(newOption)
 				{
 				case 1:
@@ -115,7 +115,7 @@ public class Client {
 				System.out.println("Enter the SeatId U want Block");
 				try
 				{
-				int block = sc.nextInt();
+				int block = scanner.nextInt();
 			
 				
 				
@@ -138,7 +138,7 @@ public class Client {
 					System.out.println("Enter seat U want to Book");
 					try
 					{
-				int	book = sc.nextInt();
+				int	book = scanner.nextInt();
 				SeatService sestservice = new SeatService();
 				Seat seatbooking = sestservice.bookseat(book);
 				System.out.println(seatbooking);
@@ -156,7 +156,7 @@ public class Client {
 					System.out.println("Enter seat U want to cancel");
 					try
 					{
-					int cancel = sc.nextInt();
+					int cancel = scanner.nextInt();
 					SeatService seatcancel = new SeatService();
 					Seat seatcancel1 = seatcancel.cancelseat(cancel);
 					System.out.println(seatcancel1);
@@ -191,7 +191,7 @@ public class Client {
 			System.out.println("Enter the Id of seatId to choose");
 			try
 			{
-			int choose = sc.nextInt();
+			int choose = scanner.nextInt();
 			
 			Show showchoosing = seatservice.chooseSeats(choose);
 			System.out.println("Enter the seat Id you want to choose");
